@@ -10,7 +10,11 @@ const Navbar = () => {
     <div className="navbar">
       <div className="navContainer">
         <Link to="/" style={{ color: "inherit", textDecoration: "none" }}>
-          <span className="logo">lamabooking</span>
+        <span className="logo">
+  <img src="https://cdn-icons-png.flaticon.com/512/9140/9140319.png" alt="Logo" />
+  Meetinghub
+</span>
+
         </Link>
         {user ? user.username : (
           <div className="navItems">
