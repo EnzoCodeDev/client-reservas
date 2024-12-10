@@ -36,6 +36,9 @@ const Navbar = () => {
             <button className="navButtonO" onClick={() => navigate("/login")}>
               Iniciar sesión
             </button>
+            <button className="navButtonR" onClick={() => navigate("/register")}>
+              Registrarse
+            </button>
           </div>
         )}
       </div>
