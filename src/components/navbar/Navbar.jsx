@@ -10,7 +10,7 @@ const Navbar = () => {
 
   const handleLogout = () => {
     logout();
-    navigate("/login"); 
+    navigate("/login");
   }
   //------------------------------------E-------------------------------------------------------------
   return (
@@ -26,10 +26,13 @@ const Navbar = () => {
           </span>
         </Link>
         {user ? (
+          // <div className="navItems">
+          //   <button className="navButtonC" onClick={handleLogout}>
+          //     Cerrar sesión
+          //   </button>
+          // </div>
           <div className="navItems">
-            <button className="navButtonC" onClick={handleLogout}>
-              Cerrar sesión
-            </button>
+            <button className="navButton" onClick={() => navigate('/login')}>Iniciar sesión</button>
           </div>
         ) : (
           <div className="navItems">
