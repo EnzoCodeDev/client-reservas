@@ -14,36 +14,36 @@ const Featured = () => {
         <>
           <div className="featuredItem">
             <img
-              src="https://cf.bstatic.com/xdata/images/city/max500/957801.webp?k=a969e39bcd40cdcc21786ba92826063e3cb09bf307bcfeac2aa392b838e9b7a5&o="
-              alt=""
+              src="https://www.bunnoestudio.com/wp-content/uploads/2021/07/que-debe-tener-una-sala-de-conferencias.jpg"
+              alt="Sala de conferencias"
               className="featuredImg"
             />
             <div className="featuredTitles">
-              <h1>Berlin</h1>
-              <h2>{data[0]} properties</h2>
+              <h1>Sala de conferencias</h1>
+           
             </div>
           </div>
 
           <div className="featuredItem">
             <img
-              src="https://cf.bstatic.com/xdata/images/city/max500/690334.webp?k=b99df435f06a15a1568ddd5f55d239507c0156985577681ab91274f917af6dbb&o="
-              alt=""
+              src="https://cdn.prod.website-files.com/5da0a1a1718dbe0c6b38d860/63d1c0babcec7178e7d3a236_WhatsApp%20Image%202023-01-25%20at%205.26.40%20PM%20(1).jpeg"
+              alt="Sala de juntas"
               className="featuredImg"
             />
             <div className="featuredTitles">
-              <h1>Madrid</h1>
-              <h2>{data[1]} properties</h2>
+              <h1>Sala de juntas</h1>
+              
             </div>
           </div>
           <div className="featuredItem">
             <img
-              src="https://cf.bstatic.com/xdata/images/city/max500/689422.webp?k=2595c93e7e067b9ba95f90713f80ba6e5fa88a66e6e55600bd27a5128808fdf2&o="
-              alt=""
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcD-6Fmausv1Bb6e7JjoxgwJEXdf9V27SQHA&s"
+              alt="Sala de videoconferencia"
               className="featuredImg"
             />
             <div className="featuredTitles">
-              <h1>London</h1>
-              <h2>{data[2]} properties</h2>
+              <h1>Sala de videoconferencia</h1>
+              
             </div>
           </div>
         </>
