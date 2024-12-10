@@ -10,7 +10,7 @@ const Navbar = () => {
 
   const handleLogout = () => {
     logout();
-    navigate("/login"); 
+    navigate("/login");
   }
   //------------------------------------E-------------------------------------------------------------
   return (
@@ -30,14 +30,21 @@ const Navbar = () => {
             <button className="navButtonC" onClick={handleLogout}>
               Cerrar sesión
             </button>
+            <button className="navButton" onClick={() => navigate('/login')}>Iniciar sesión</button>
           </div>
         ) : (
           <div className="navItems">
+<<<<<<< HEAD
             <button className="navButtonI" onClick={() => navigate("/login")}>
               Iniciar sesión
             </button>
+=======
+>>>>>>> d577655204df6d15a5fb43ddbb12b44b9c8a1fd4
             <button className="navButtonR" onClick={() => navigate("/register")}>
               Registrarse
+            </button>
+            <button className="navButtonO" onClick={() => navigate("/login")}>
+              Iniciar sesión
             </button>
           </div>
         )}
