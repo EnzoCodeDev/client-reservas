@@ -29,7 +29,6 @@ const Navbar = () => {
             <button className="navButtonC" onClick={handleLogout}>
               Cerrar sesión
             </button>
-            <button className="navButton" onClick={() => navigate('/login')}>Iniciar sesión</button>
           </div>
         ) : (
           <div className="navItems">
