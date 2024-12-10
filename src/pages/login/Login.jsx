@@ -35,7 +35,7 @@ const Login = () => {
     <div className="login">
       <div className="loginBox">
         <div className="avatar">
-          <i className="user"></i>
+          <i className="fas fa-user"></i>
         </div>
         <h2 className="title">Acceder</h2>
         <div className="inputContainer">
