@@ -16,6 +16,9 @@ import { format } from "date-fns";
 import { useNavigate } from "react-router-dom";
 import { SearchContext } from "../../context/SearchContext";
 import { AuthContext } from "../../context/AuthContext";
+import { faHouse, faTags } from "@fortawesome/free-solid-svg-icons";
+import { faUsers, faChalkboard } from '@fortawesome/free-solid-svg-icons';
+
 
 const Header = ({ type }) => {
   const [destination, setDestination] = useState("");
@@ -31,7 +34,7 @@ const Header = ({ type }) => {
   const [options, setOptions] = useState({
     adult: 1,
     children: 0,
-    room: 1,
+    salas: 1,
   });
 
   const navigate = useNavigate();
@@ -63,42 +66,29 @@ const Header = ({ type }) => {
       >
         <div className="headerList">
           <div className="headerListItem active">
-            <FontAwesomeIcon icon={faBed} />
-            <span>Stays</span>
+          <FontAwesomeIcon icon={faTags} />
+            <span>salas</span>
           </div>
-          <div className="headerListItem">
-            <FontAwesomeIcon icon={faPlane} />
-            <span>Flights</span>
-          </div>
-          <div className="headerListItem">
-            <FontAwesomeIcon icon={faCar} />
-            <span>Car rentals</span>
-          </div>
-          <div className="headerListItem">
-            <FontAwesomeIcon icon={faBed} />
-            <span>Attractions</span>
-          </div>
-          <div className="headerListItem">
-            <FontAwesomeIcon icon={faTaxi} />
-            <span>Airport taxis</span>
-          </div>
+         
+        
+          
+         
         </div>
         {type !== "list" && (
           <>
             <h1 className="headerTitle">
-              A lifetime of discounts? It's Genius.
+            ¿Buscas Salas de Reuniones? Descuentos exclusivos, ¡tu momento único!
             </h1>
             <p className="headerDesc">
-              Get rewarded for your travels – unlock instant savings of 10% or
-              more with a free Lamabooking account
+            "Salas de reuniones con descuentos exclusivos para tu éxito profesional."
             </p>
-            {!user && <button className="headerBtn">Sign in / Register</button>}
+           
             <div className="headerSearch">
               <div className="headerSearchItem">
-                <FontAwesomeIcon icon={faBed} className="headerIcon" />
+                <FontAwesomeIcon icon={faUsers} className="headerIcon" />
                 <input
                   type="text"
-                  placeholder="Where are you going?"
+                  placeholder="¿Cuál sala prefieres?"
                   className="headerSearchInput"
                   onChange={(e) => setDestination(e.target.value)}
                 />
@@ -128,7 +118,7 @@ const Header = ({ type }) => {
                 <span
                   onClick={() => setOpenOptions(!openOptions)}
                   className="headerSearchText"
-                >{`${options.adult} adult · ${options.children} children · ${options.room} room`}</span>
+                >{`${options.adult} adult · ${options.salas} salas`}</span>
                 {openOptions && (
                   <div className="options">
                     <div className="optionItem">
@@ -152,43 +142,23 @@ const Header = ({ type }) => {
                         </button>
                       </div>
                     </div>
+                  
                     <div className="optionItem">
-                      <span className="optionText">Children</span>
+                      <span className="optionText">salas</span>
                       <div className="optionCounter">
                         <button
-                          disabled={options.children <= 0}
+                          disabled={options.salas <= 1}
                           className="optionCounterButton"
-                          onClick={() => handleOption("children", "d")}
+                          onClick={() => handleOption("salas", "d")}
                         >
                           -
                         </button>
                         <span className="optionCounterNumber">
-                          {options.children}
+                          {options.salas}
                         </span>
                         <button
                           className="optionCounterButton"
-                          onClick={() => handleOption("children", "i")}
-                        >
-                          +
-                        </button>
-                      </div>
-                    </div>
-                    <div className="optionItem">
-                      <span className="optionText">Room</span>
-                      <div className="optionCounter">
-                        <button
-                          disabled={options.room <= 1}
-                          className="optionCounterButton"
-                          onClick={() => handleOption("room", "d")}
-                        >
-                          -
-                        </button>
-                        <span className="optionCounterNumber">
-                          {options.room}
-                        </span>
-                        <button
-                          className="optionCounterButton"
-                          onClick={() => handleOption("room", "i")}
+                          onClick={() => handleOption("salas", "i")}
                         >
                           +
                         </button>
@@ -199,7 +169,7 @@ const Header = ({ type }) => {
               </div>
               <div className="headerSearchItem">
                 <button className="headerBtn" onClick={handleSearch}>
-                  Search
+                  Buscar
                 </button>
               </div>
             </div>
