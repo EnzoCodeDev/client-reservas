@@ -35,7 +35,7 @@
 }
 
 
-.navButton {
+.navButtonI {
   font-family: 'Poppins', sans-serif;
   border: none;
   padding: 8px 15px;
@@ -54,6 +54,25 @@
   border-radius: 5px;
 }
 
+.navButtonR {
+  font-family: 'Poppins', sans-serif;
+  border: none;
+  padding: 8px 15px;
+  background-color: transparent;
+  color: #feffff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navButtonR:hover,
+.navButtonR:focus {
+  background-color: #2d18cf;
+  color: #f9ffff;
+  border-radius: 5px;
+}
+
 @media (max-width: 768px) {
   .navbar {
     height: 60px;
@@ -67,3 +86,4 @@
     padding: 6px 12px;
   }
 }
+

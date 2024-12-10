@@ -33,7 +33,7 @@ const Navbar = () => {
           </div>
         ) : (
           <div className="navItems">
-            <button className="navButtonO" onClick={() => navigate("/login")}>
+            <button className="navButtonI" onClick={() => navigate("/login")}>
               Iniciar sesión
             </button>
             <button className="navButtonR" onClick={() => navigate("/register")}>
