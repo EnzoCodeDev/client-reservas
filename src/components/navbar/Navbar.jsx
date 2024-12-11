@@ -5,14 +5,13 @@ import { AuthContext } from "../../context/AuthContext";
 
 const Navbar = () => {
   const navigate = useNavigate();
-  //------------------------------------E--------------------------------------------------------
   const { user, logout } = useContext(AuthContext);
 
   const handleLogout = () => {
     logout();
     navigate("/login");
   }
-  //------------------------------------E-------------------------------------------------------------
+
   return (
     <div className="navbar">
       <div className="navContainer">
@@ -36,7 +35,7 @@ const Navbar = () => {
             <button className="navButtonR" onClick={() => navigate("/register")}>
               Registrarse
             </button>
-            <button className="navButtonO" onClick={() => navigate("/login")}>
+            <button className="navButtonI" onClick={() => navigate("/login")}>
               Iniciar sesión
             </button>
           </div>

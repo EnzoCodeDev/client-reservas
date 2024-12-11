@@ -123,22 +123,22 @@
 .headerSearchItem {
   display: flex;
   align-items: center;
-  gap: 15px; /* Más espaciado para claridad */
-  padding: 8px 12px; /* Añadir relleno para un diseño más cómodo */
-  border-radius: 8px; /* Bordes redondeados */
-  transition: background-color 0.3s, box-shadow 0.3s; /* Suavizar transiciones */
+  gap: 15px;
+  padding: 8px 12px; 
+  border-radius: 8px; 
+  transition: background-color 0.3s, box-shadow 0.3s; 
 }
 
 .headerSearchItem:hover {
-  background-color: #ffffff; /* Suave cambio de color al pasar el cursor */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Añadir efecto de elevación */
+  background-color: #ffffff; 
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
 }
 
 .headerSearchInput {
-  flex: 1; /* Adaptar el input para que ocupe todo el espacio disponible */
+  flex: 1; 
   border: none;
   outline: none;
-  background-color: #f9f9f9; /* Fondo más claro */
+  background-color: #f9f9f9;
   padding: 10px;
   border-radius: 5px;
   font-size: 14px;
@@ -146,12 +146,12 @@
 }
 
 .headerSearchInput:focus {
-  box-shadow: 0 0 8px rgba(0, 113, 194, 0.5); /* Resaltar foco */
+  box-shadow: 0 0 8px rgba(0, 113, 194, 0.5);
   border-color: #0071c2;
 }
 
 .headerSearchText {
-  color: #444; /* Texto más visible */
+  color: #444; 
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
@@ -159,7 +159,7 @@
 }
 
 .headerSearchText:hover {
-  color: #0071c2; /* Resaltar color al pasar el cursor */
+  color: #0071c2; 
 }
 
 .date {
