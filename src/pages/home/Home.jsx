@@ -15,9 +15,12 @@ const Home = () => {
       <div className="homeContainer">
         <Featured/>
         <h1 className="homeTitle">Descubre tu opción ideal</h1>
+<<<<<<< HEAD
         <h2>Lugar o Salas</h2>
+=======
+        <h2>Lugares o salas.</h2>
+>>>>>>> 47cc3b354b737b983352de487760a7e602402269
         <PropertyList/>
-        <h1 className="homeTitle">Homes guests love</h1>
         <FeaturedProperties/>
         <MailList/>
         <Footer/>
