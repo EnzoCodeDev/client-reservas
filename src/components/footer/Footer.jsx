@@ -5,48 +5,44 @@ const Footer = () => {
     <div className="footer">
       <div className="fLists">
         <ul className="fList">
-          <li className="fListItem">Countries</li>
-          <li className="fListItem">Regions</li>
-          <li className="fListItem">Cities</li>
-          <li className="fListItem">Districts</li>
-          <li className="fListItem">Airports</li>
-          <li className="fListItem">Hotels</li>
+          <li className="fListItem">Cómo funciona</li>
+          <li className="fListItem">Salas de reuniones</li>
+          <li className="fListItem">Ajustes de reserva</li>
+          <li className="fListItem">Precios y opciones</li>
         </ul>
         <ul className="fList">
-          <li className="fListItem">Homes </li>
-          <li className="fListItem">Apartments </li>
-          <li className="fListItem">Resorts </li>
-          <li className="fListItem">Villas</li>
-          <li className="fListItem">Hostels</li>
-          <li className="fListItem">Guest houses</li>
+          <li className="fListItem">Nosotros</li>
+          <li className="fListItem">Nuestro equipo</li>
+          <li className="fListItem">Innovación en espacios</li>
+          <li className="fListItem">Responsabilidad social</li>
         </ul>
         <ul className="fList">
-          <li className="fListItem">Unique places to stay </li>
-          <li className="fListItem">Reviews</li>
-          <li className="fListItem">Unpacked: Travel articles </li>
-          <li className="fListItem">Travel communities </li>
-          <li className="fListItem">Seasonal and holiday deals </li>
+          <li className="fListItem">Blog</li>
+          <li className="fListItem">Casos de éxito</li>
+          <li className="fListItem">Artículos sobre reuniones</li>
+          <li className="fListItem">Consejos y mejores prácticas</li>
         </ul>
         <ul className="fList">
-          <li className="fListItem">Car rental </li>
-          <li className="fListItem">Flight Finder</li>
-          <li className="fListItem">Restaurant reservations </li>
-          <li className="fListItem">Travel Agents </li>
+          <li className="fListItem">Servicios adicionales</li>
+          <li className="fListItem">Catering</li>
+          <li className="fListItem">Equipos de conferencia</li>
+          <li className="fListItem">Soporte técnico</li>
         </ul>
         <ul className="fList">
-          <li className="fListItem">Curtomer Service</li>
-          <li className="fListItem">Partner Help</li>
-          <li className="fListItem">Careers</li>
-          <li className="fListItem">Sustainability</li>
-          <li className="fListItem">Press center</li>
-          <li className="fListItem">Safety Resource Center</li>
-          <li className="fListItem">Investor relations</li>
-          <li className="fListItem">Terms & conditions</li>
+          <li className="fListItem">Contacto</li>
+          <li className="fListItem">Atención al cliente</li>
+          <li className="fListItem">Soporte para empresas</li>
+          <li className="fListItem">Sostenibilidad</li>
         </ul>
       </div>
-      <div className="fText">Copyright © 2022 Lamabooking.</div>
+      <div className="fText">
+        Copyright © 2024 Meetinghub. Todos los derechos reservados. 
+        <br />
+        <span>Tu lugar ideal para reuniones efectivas.</span>
+      </div>
     </div>
   );
 };
 
 export default Footer;
+
