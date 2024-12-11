@@ -20,7 +20,6 @@ function App() {
         <Route path="/hotels/:id" element={<Hotel/>}/>
         <Route path="/rooms/:id_hotel" element={<Rooms/>}/>
         <Route path="/login" element={<Login/>}/>
-        <Route path="/rooms/:idhotel" element={<RoomSeparate/>}/> {/* Falta ruta de habitaciones del hotel */}
         <Route path="/room-separate/:id" element={<RoomSeparate/>}/>
         <Route path="/register" element={<Register/>}/>
       </Routes>

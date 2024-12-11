@@ -1,1 +1,1 @@
-export const urlApi = 'http://localhost:8800/api'
+export const urlApi = 'https://api-reservas-gta4.onrender.com/api'
