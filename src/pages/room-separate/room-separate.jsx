@@ -4,10 +4,6 @@ import './room-separate.scss';
 import { urlApi } from "../../config/config";
 import axios from 'axios'; // for making API requests
 
-<<<<<<< HEAD
-const RoomSeparate = () => {
- 
-=======
 const SuccessModal = ({ isOpen, onClose }) => {
   return (
     isOpen && (
@@ -33,7 +29,6 @@ const handleReserveRoom = async (dates, room_id) => {
 };
 
 const RoomSeparate = ({ roomData, onClose }) => {
->>>>>>> a6f7c24bcb173c6d6336f43394d6921682019c22
   // Datos simulados de la habitación (puedes reemplazarlos con datos reales más adelante)
   // const roomData = {
   //   title: 'Habitación Deluxe',
