@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url('') no-repeat center center/cover;
+  background: url('img/fondo.jpg') no-repeat center center/cover;
 }
 .lContainer {
   display: flex;
@@ -47,7 +47,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url('img/fondo.jpg') no-repeat center center/cover; 
+  background: url('img/fondo1.jpg') no-repeat center center/cover; 
 }
 
 .loginBox {
@@ -63,13 +63,13 @@ body {
 .title {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #ff6a00;
+  color: #2d18cf;
   margin-bottom: 20px;
 }
 
 .avatar {
   font-size: 5rem;
-  color: #ff6a00;
+  color: #2d18cf;
   background: #ffffff;
   border-radius: 50%;
   width: 100px;
@@ -93,7 +93,7 @@ body {
   top: 50%;
   left: 10px;
   transform: translateY(-50%);
-  color: #ff6a00;
+  color: #2d18cf;
 }
 
 .lInput {
@@ -109,17 +109,17 @@ body {
   right: 10px;
   background: none;
   border: none;
-  color: #ff6a00;
+  color: #2d18cf;
   cursor: pointer;
   font-size: 1.2rem;
 }
 
 .passwordToggle:hover {
-  color: #ff9200;
+  color: #2d18cf;
 }
 
 .lButton {
-  background: linear-gradient(135deg, #ff6a00, #ff9200);
+  background: linear-gradient(135deg, #2d18cf, #4032a7);
   border: none;
   border-radius: 25px;
   font-size: 1rem;
@@ -133,7 +133,7 @@ body {
 
 .lButton:hover {
   transform: scale(1.05);
-  background: linear-gradient(135deg, #ff7a1a, #ffaa50);
+  background: linear-gradient(135deg, #2d18cf, #05021f);
 }
 
 .errorMessage {

@@ -1,30 +1,87 @@
-.mail{
-  width: 100%;
+.mail {
+  width: 93.4%;
   margin-top: 50px;
-  background-color: #003580;
+  background: linear-gradient(rgba(0, 53, 128, 0.8), rgba(0, 53, 128, 0.8)), url("https://umanizales.edu.co/sites/default/files/2023-09/atencion%20al%20cliente.jpg");
+  background-size: cover;
+  background-position: center;
   color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
   padding: 50px;
+  margin-bottom: 0;
 }
 
-.mailInputContainer>input{
-  width: 300px;
-  height: 30px;
+
+.mailTitle {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.mailDesc {
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.mailForm {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mailInputContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.mailInputContainer input {
+  width: 100%;
+  height: 40px;
   padding: 10px;
-  border: none;
-  margin-right: 10px;
+  border: 1px solid #ccc;
   border-radius: 5px;
+  font-size: 16px;
 }
 
-.mailInputContainer>button{
-  height: 50px;
-  background-color: #0071c2;
-  color: white;
-  font-weight: 500;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.phoneInput input {
+  width: 100%;
 }
+
+.submitButton {
+  width: 30%; 
+  height: 40px; 
+  padding: 0 15px;
+  background-color: #0071c2; 
+  color: white; 
+  font-weight: 600; 
+  border: none; 
+  border-radius: 25px; 
+  cursor: pointer;
+  font-size: 16px; 
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  margin: 0 auto; 
+  margin-right: 190px;
+  display: block; 
+}
+
+.submitButton:hover {
+  background-color: #005c99; 
+  transform: translateY(-2px); 
+}
+
+.submitButton:active {
+  transform: translateY(1px); 
+}
+
+.submitButton:focus {
+  outline: none;
+}
+
+

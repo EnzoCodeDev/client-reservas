@@ -3,8 +3,8 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(135deg, #0071c2, #005bb5);
-  }
+    background: url('img/fondo1.jpg');
+}
   
 .rContainer {
     background: #fff;
@@ -18,15 +18,15 @@
     gap: 20px;
     text-align: center;
     align-items: center;
-  }
+}
   
 h2 {
     font-size: 1.8rem;
     font-weight: 700;
-    color: #0071c2;
-  }
+    color: #2d18cf;
+}
   
-  .rInput {
+.rInput {
     width: 100%;
     padding: 12px 15px;
     border: 1px solid #ddd;
@@ -35,30 +35,30 @@ h2 {
     transition: all 0.3s ease;
     text-align: center;
     color: #333;
-  }
+}
   
-  .rInput:focus {
+.rInput:focus {
     outline: none;
     border-color: #0071c2;
     box-shadow: 0 0 5px rgba(0, 113, 194, 0.5);
-  }
+ }
   
-  .inputError {
+.inputError {
     border-color: #d32f2f;
     color: #d32f2f;
-  }
+}
   
-  .inputError::placeholder {
+.inputError::placeholder {
     color: #d32f2f;
-  }
+}
   
-  .error {
+.error {
     color: #d32f2f;
     font-size: 0.85rem;
-  }
+}
   
-  .rButton {
-    background: linear-gradient(135deg, #0071c2, #005bb5);
+.rButton {
+    background: linear-gradient(135deg, #2d18cf, #4032a7);
     border: none;
     color: #fff;
     font-weight: 600;
@@ -66,14 +66,13 @@ h2 {
     border-radius: 25px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-  }
+}
   
-  .rButton:hover {
-    background: linear-gradient(135deg, #005bb5, #004b99);
+.rButton:hover {
+    background: linear-gradient(135deg, #2d18cf, #05021f);
     transform: scale(1.05);
-  }
+}
 
-/* Modal de éxito */
 .modal {
     position: fixed;
     top: 0;
@@ -85,46 +84,46 @@ h2 {
     justify-content: center;
     align-items: center;
     z-index: 1000;
-  }
+}
   
-  .modalContent {
+.modalContent {
     background: #fff;
     padding: 20px 30px;
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  }
+}
   
-  .modalContent p {
+.modalContent p {
     font-size: 1.2rem;
     font-weight: 600;
     color: #0071c2;
-  }
+}
 
 .phoneContainer {
     display: flex;
     gap: 10px;
     width: 100%;
-  }
+}
   
-  .rInput {
+.rInput {
     width: 100%;
     padding: 12px 15px;
     border: 1px solid #ddd;
     border-radius: 25px;
     font-size: 1rem;
     transition: all 0.3s ease;
-  }
+}
   
-  .rInput:focus {
+.rInput:focus {
     outline: none;
     border-color: #0071c2;
     box-shadow: 0 0 5px rgba(0, 113, 194, 0.5);
-  }
+}
   
-  .inputError {
+.inputError {
     border-color: #d32f2f;
     box-shadow: 0 0 5px rgba(211, 47, 47, 0.5);
-  }
+}
 
   
