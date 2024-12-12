@@ -2,16 +2,26 @@ import './rooms.scss';
 import Navbar from "../../components/navbar/Navbar";
 import useFetch from "../../hooks/useFetch";
 import { useParams } from "react-router-dom";
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import RoomSeparate from '../room-separate/room-separate'; // Import the RoomSeparate component
+
 
 export const Rooms = () => {
     let { id_hotel } = useParams();
+    const [selectedRoom, setSelectedRoom] = useState(null);
     const { data, loading, error } = useFetch(`/rooms/byHotel/${id_hotel}`);
 
     useEffect(() => {
         // Aquí puedes hacer algo cuando 'data' cambie si es necesario
     }, [data]);
 
+    const handleReserveClick = (room) => {
+        setSelectedRoom(room); // Set the selected room data on button click
+      };
+    
+    const handleModalClose = () => {
+    setSelectedRoom(null); // Clear selected room data on modal close
+    };
     return (
         <div className="rooms-container">
             <Navbar />
@@ -46,6 +56,7 @@ export const Rooms = () => {
                                                     </div>
                                                 ))}
                                             </div>
+                                            <button onClick={() => handleReserveClick(room)}>Reserva</button>
                                         </div>
                                     ))
                                 ) : (
@@ -59,6 +70,9 @@ export const Rooms = () => {
                         </div>
                     )}
                 </div>
+            )}
+            {selectedRoom && (
+                <RoomSeparate roomData={selectedRoom} onClose={handleModalClose} />
             )}
         </div>
     );

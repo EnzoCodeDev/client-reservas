@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import { Box, TextField, Typography, Button } from '@mui/material';
 import './room-separate.scss';
 
-const RoomSeparate = () => {
+const RoomSeparate = ({ roomData, onClose }) => {
   // Datos simulados de la habitación (puedes reemplazarlos con datos reales más adelante)
-  const roomData = {
-    title: 'Habitación Deluxe',
-    price: 100, // Precio por noche
-    maxPeople: 3,
-    desc: 'Habitación espaciosa y bien equipada con vista al mar.',
-    roomNumbers: [{ number: 101, unavailableDates: ['2024-12-20', '2024-12-25'] }],
-  };
+  // const roomData = {
+  //   title: 'Habitación Deluxe',
+  //   price: 100, // Precio por noche
+  //   maxPeople: 3,
+  //   desc: 'Habitación espaciosa y bien equipada con vista al mar.',
+  //   roomNumbers: [{ number: 101, unavailableDates: ['2024-12-20', '2024-12-25'] }],
+  // };
 
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
