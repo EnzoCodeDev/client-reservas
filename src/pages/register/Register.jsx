@@ -1,11 +1,11 @@
-import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./register.scss";
-import { urlApi } from "../../config/config";
+import axios from "axios";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 import { isValidPhoneNumber } from "react-phone-number-input";
+import { urlApi } from "../../config/config";
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -18,8 +18,25 @@ const Register = () => {
   });
 
   const [errors, setErrors] = useState({});
+  const [countries, setCountries] = useState([]);
   const [successModal, setSuccessModal] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const fetchCountries = async () => {
+      try {
+        const response = await axios.get("https://restcountries.com/v3.1/all");
+        const countryNames = response.data.map((country) => ({
+          name: country.name.common,
+          code: country.cca2,
+        }));
+        setCountries(countryNames.sort((a, b) => a.name.localeCompare(b.name)));
+      } catch (error) {
+        console.error("Error al cargar la lista de países:", error);
+      }
+    };
+    fetchCountries();
+  }, []);
 
   const validateForm = () => {
     let newErrors = {};
@@ -28,14 +45,11 @@ const Register = () => {
     if (!formData.password || formData.password.length < 8)
       newErrors.password = "La contraseña debe tener mínimo 8 caracteres.";
     if (!formData.email || !/\S+@\S+\.\S+/.test(formData.email))
-      newErrors.email = "Por favor introduzca un correo valido.";
-    if (!formData.country) newErrors.country = "Por favor introduzca un pais.";
+      newErrors.email = "Por favor introduzca un correo válido.";
+    if (!formData.country) newErrors.country = "Por favor seleccione un país.";
     if (!formData.city) newErrors.city = "Por favor introduzca una ciudad.";
-
     if (!formData.phone || !isValidPhoneNumber(formData.phone))
-      newErrors.phone = "Número de teléfono inválido o incompleto";
-    else if (formData.phone.length > 15)
-      newErrors.phone = "El número de teléfono debe tener máximo 15 dígitos";
+      newErrors.phone = "Número de celular inválido o incompleto.";
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -82,7 +96,7 @@ const Register = () => {
         navigate("/login");
       }, 3000);
     } catch (err) {
-      setErrors({ apiError: err.response?.data?.message || "Ocurrió un error." });
+      setErrors({apiError: err.response?.data?.message || err.message || "Ocurrió un error inesperado.",});
     }
   };
 
@@ -91,6 +105,7 @@ const Register = () => {
       <div className="rContainer">
         <h2>Registro</h2>
         {errors.apiError && <span className="error">{errors.apiError}</span>}
+
         <input
           type="text"
           placeholder={errors.username || "Usuario"}
@@ -115,14 +130,19 @@ const Register = () => {
           onChange={handleChange}
           className={`rInput ${errors.email ? "inputError" : ""}`}
         />
-        <input
-          type="text"
-          placeholder={errors.country || "País"}
+        <select
           id="country"
           value={formData.country}
           onChange={handleChange}
           className={`rInput ${errors.country ? "inputError" : ""}`}
-        />
+        >
+          <option value="">{errors.country || "Seleccione un país"}</option>
+          {countries.map((country) => (
+            <option key={country.code} value={country.name}>
+              {country.name}
+            </option>
+          ))}
+        </select>
         <input
           type="text"
           placeholder={errors.city || "Ciudad"}
@@ -137,7 +157,7 @@ const Register = () => {
           value={formData.phone}
           onChange={handlePhoneChange}
           className={`rInput ${errors.phone ? "inputError" : ""}`}
-          placeholder={errors.phone || "Teléfono"}
+          placeholder={errors.phone || "Celular"}
         />
 
         <button onClick={handleClick} className="rButton">

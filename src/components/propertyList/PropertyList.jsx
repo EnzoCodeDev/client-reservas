@@ -3,6 +3,12 @@ import "./propertyList.css";
 
 const PropertyList = () => {
   const { data, loading, error } = useFetch("/hotels/countByType");
+
+  const images = [
+    "https://ebents.com/incubandoexitos/wp-content/uploads/2018/02/elegir-el-lugar-ideal-negocio.jpg",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdDmH8pxxmlEPgKBGY4q-JuDzCXmy6MGTlTw&s",
+
+  ];
   return (
     <div className="pList">
       {loading ? (
