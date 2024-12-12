@@ -47,8 +47,8 @@
   transition: background-color 0.3s, color 0.3s;
 }
 
-.navButton:hover,
-.navButton:focus {
+.navButtonI:hover,
+.navButtonI:focus {
   background-color: #2d18cf;
   color: #f9ffff;
   border-radius: 5px;
