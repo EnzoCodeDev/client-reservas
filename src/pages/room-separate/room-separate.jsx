@@ -3,6 +3,7 @@ import { Box, TextField, Typography, Button } from '@mui/material';
 import './room-separate.scss';
 
 const RoomSeparate = () => {
+ 
   // Datos simulados de la habitación (puedes reemplazarlos con datos reales más adelante)
   const roomData = {
     title: 'Habitación Deluxe',
@@ -17,19 +18,26 @@ const RoomSeparate = () => {
   const [totalPrice, setTotalPrice] = useState(0);
 
   const calculatePrice = () => {
-    if (startDate && endDate) {
-      const start = new Date(startDate);
-      const end = new Date(endDate);
-      const days = Math.ceil((end - start) / (1000 * 60 * 60 * 24)); // Calcula la diferencia en días
-      if (days > 0) {
-        setTotalPrice(days * roomData.price);
-      } else {
-        alert('La fecha de salida debe ser posterior a la fecha de entrada.');
-      }
-    } else {
+    if (!startDate || !endDate) {
       alert('Por favor selecciona ambas fechas.');
+      return;
+    }
+  
+    const start = new Date(startDate);
+    const end = new Date(endDate);
+    if (isNaN(start.getTime()) || isNaN(end.getTime())) {
+      alert('Fechas inválidas. Por favor selecciona fechas válidas.');
+      return;
+    }
+  
+    const days = Math.ceil((end - start) / (1000 * 60 * 60 * 24));
+    if (days > 0) {
+      setTotalPrice(days * roomData.price);
+    } else {
+      alert('La fecha de salida debe ser posterior a la fecha de entrada.');
     }
   };
+  
 
   const handleReserve = () => {
     alert(`Reserva confirmada para la habitación "${roomData.title}" por ${totalPrice} USD.`);
