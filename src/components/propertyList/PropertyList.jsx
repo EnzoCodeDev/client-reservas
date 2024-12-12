@@ -17,7 +17,7 @@ const PropertyList = () => {
         <>
           <div className="pListItem">
             <img
-              src={'https://cf.bstatic.com/xdata/images/xphoto/square300/57584488.webp?k=bf724e4e9b9b75480bbe7fc675460a089ba6414fe4693b83ea3fdd8e938832a6&o='}
+              src={'https://ebents.com/incubandoexitos/wp-content/uploads/2018/02/elegir-el-lugar-ideal-negocio.jpg'}
               alt=""
               className="pListImg"
             />
@@ -27,7 +27,7 @@ const PropertyList = () => {
           </div>
           <div className="pListItem">
             <img
-              src={'https://cf.bstatic.com/static/img/theme-index/carousel_320x240/card-image-apartments_300/9f60235dc09a3ac3f0a93adbc901c61ecd1ce72e.jpg'}
+              src={'https://blog.jamar.com/wp-content/uploads/juego-de-sala-lana-01-1200x900.webp'}
               alt=""
               className="pListImg"
             />
