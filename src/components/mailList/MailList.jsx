@@ -71,7 +71,7 @@ const MailList = () => {
             />
           </div>
         </div>
-        <button className="submitButton">Enviar</button>
+        <button type="submit" className="submitButton">Enviar</button>
       </form>
     </div>
   );
