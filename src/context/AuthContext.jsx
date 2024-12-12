@@ -50,11 +50,10 @@ export const AuthContextProvider = ({ children }) => {
     }
   }, [state.user]);
 
-  //----------------------E------------------ Función de logout
   const logout = () => {
     dispatch({ type: "LOGOUT" });
   };
-  //----------------------------E--------------------------------------------------
+  
   return (
     <AuthContext.Provider
       value={{
@@ -62,9 +61,8 @@ export const AuthContextProvider = ({ children }) => {
         loading: state.loading,
         error: state.error,
         dispatch,
-        //------------------
         logout, 
-        //----------------
+        
       }}
     >
       {children}

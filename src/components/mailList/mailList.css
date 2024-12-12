@@ -1,7 +1,9 @@
 .mail {
   width: 100%;
   margin-top: 50px;
-  background-color: #003580;
+  background: linear-gradient(rgba(0, 53, 128, 0.8), rgba(0, 53, 128, 0.8)), url("https://umanizales.edu.co/sites/default/files/2023-09/atencion%20al%20cliente.jpg");
+  background-size: cover;
+  background-position: center;
   color: white;
   display: flex;
   flex-direction: column;
@@ -9,6 +11,7 @@
   gap: 20px;
   padding: 50px;
 }
+
 
 .mailTitle {
   font-size: 36px;
