@@ -1,20 +1,15 @@
 import "./navbar.css";
 import { Link, useNavigate } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 
 const Navbar = () => {
   const navigate = useNavigate();
   const { user, logout } = useContext(AuthContext);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const handleLogout = () => {
     logout();
     navigate("/login");
-  };
-
-  const toggleDropdown = () => {
-    setDropdownOpen((prev) => !prev);
   };
 
   return (
@@ -31,15 +26,8 @@ const Navbar = () => {
         </Link>
         {user ? (
           <div className="navItems">
-            <div className="userMenu">
-              <span className="userName" onClick={toggleDropdown}>Hola, {user.username}</span>
-              {dropdownOpen && (
-                <div className="dropdownMenu">
-                  <button className="dropdownItem" onClick={() => navigate("/profile")}>Perfil</button>
-                  <button className="dropdownItem" onClick={handleLogout}>Cerrar sesión</button>
-                </div>
-              )}
-            </div>
+            <span className="userName">Hola, {user.username}</span>
+            <button className="navButtonC" onClick={handleLogout}>Cerrar sesión</button>
           </div>
         ) : (
           <div className="navItems">
