@@ -1,17 +1,16 @@
 .fp {
-  width: 100%;
-  max-width: 1024px;
+  width: 90%;
   display: flex;
   justify-content: space-between;
-  gap: 20px;
+  flex-wrap: wrap;
+  margin: auto;
+  margin-top: 80px;
 }
 
 .fpItem{
-  flex: 1;
-  gap: 10px;
   display: flex;
   flex-direction: column;
-  cursor: pointer;
+  width: 30%;
 }
 
 .fpImg{

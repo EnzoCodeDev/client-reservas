@@ -63,15 +63,6 @@ export const Rooms = () => {
                                             <p className="room-desc">{room.desc}</p>
                                             <p className="room-price">Precio: ${room.price} por noche</p>
                                             <p className="room-capacity">Capacidad: {room.maxPeople} personas</p>
-                                            <div className="room-numbers">
-                                                <h3>Habitaciones disponibles</h3>
-                                                {room.roomNumbers.map((number) => (
-                                                    <div key={number._id} className="room-number">
-                                                        <p>Número: {number.number}</p>
-                                                        <p>{number.unavailableDates.length > 0 ? 'No disponible' : 'Disponible'}</p>
-                                                    </div>
-                                                ))}
-                                            </div>
                                             <button onClick={() => handleReserveClick(room)}>Reserva</button>
                                         </div>
                                     ))
