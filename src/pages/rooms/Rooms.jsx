@@ -7,6 +7,7 @@ import RoomSeparate from '../room-separate/room-separate';
 import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
+import DialogTitle from '@mui/material/DialogTitle';
 import Button from '@mui/material/Button';
 import { AuthContext } from "../../context/AuthContext";
 
