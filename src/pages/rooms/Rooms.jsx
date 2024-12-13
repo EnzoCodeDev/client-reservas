@@ -11,30 +11,30 @@ import DialogActions from '@mui/material/DialogActions';
 import Button from '@mui/material/Button';
 
 export const Rooms = () => {
-  let { id_hotel } = useParams();
-  const [selectedRoom, setSelectedRoom] = useState(null);
-  const { data, loading, error } = useFetch(`/rooms/byHotel/${id_hotel}`);
+    let { id_hotel } = useParams();
+    const [selectedRoom, setSelectedRoom] = useState(null);
+    const { data, loading, error } = useFetch(`/rooms/byHotel/${id_hotel}`);
 
-  // Use a single state variable to control the modal visibility
-  const [open, setOpen] = useState(false);
+    // Use a single state variable to control the modal visibility
+    const [open, setOpen] = useState(false);
 
-  const handleReserveClick = (room) => {
-    setSelectedRoom(room); // Set the selected room data on button click
-    setOpen(true); // Open the modal when a room is selected
-  };
+    const handleReserveClick = (room) => {
+        setSelectedRoom(room); // Set the selected room data on button click
+        setOpen(true); // Open the modal when a room is selected
+    };
 
-  const handleModalClose = () => {
-    setSelectedRoom(null); // Clear selected room data on modal close
-    setOpen(false); // Close the modal
-  };
+    const handleModalClose = () => {
+        setSelectedRoom(null); // Clear selected room data on modal close
+        setOpen(false); // Close the modal
+    };
 
-  useEffect(() => {
-    // ... (Aquí puedes hacer algo cuando 'data' cambie si es necesario)
-  }, [data]);
+    useEffect(() => {
+        // ... (Aquí puedes hacer algo cuando 'data' cambie si es necesario)
+    }, [data]);
 
-  return (
-    <div className="rooms-container">
-      <Navbar />
+    return (
+        <div className="rooms-container">
+            <Navbar />
             {loading ? (
                 <p className="loading">Cargando...</p>
             ) : error ? (
@@ -82,14 +82,14 @@ export const Rooms = () => {
                 </div>
             )}
             {selectedRoom && (
-                <Dialog open={open} onClose={handleModalClose}>
-                <DialogTitle>DETALLES DE LA HABITACIÓN</DialogTitle>
-                <DialogContent>
-                    <RoomSeparate roomData={selectedRoom} onClose={handleModalClose} />
-                </DialogContent>
-                <DialogActions>
-                    <Button onClick={handleModalClose}>Salir</Button>
-                </DialogActions>
+                <Dialog fullScreen={true} open={open} onClose={handleModalClose}>
+                    <DialogTitle>DETALLES DE LA HABITACIÓN</DialogTitle>
+                    <DialogContent>
+                        <RoomSeparate roomData={selectedRoom} onClose={handleModalClose} />
+                    </DialogContent>
+                    <DialogActions>
+                        <Button onClick={handleModalClose}>Salir</Button>
+                    </DialogActions>
                 </Dialog>
             )}
         </div>
