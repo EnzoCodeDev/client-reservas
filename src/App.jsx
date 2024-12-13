@@ -10,7 +10,6 @@ import Login from "./pages/login/Login";
 import { Rooms } from "./pages/rooms/Rooms";
 import RoomSeparate from "./pages/room-separate/room-separate";
 import Register from "./pages/register/Register"
-import Profile from "./pages/profile/Profile"
 
 function App() {
   return (
@@ -23,7 +22,6 @@ function App() {
         <Route path="/login" element={<Login/>}/>
         <Route path="/room-separate/:id" element={<RoomSeparate/>}/>
         <Route path="/register" element={<Register/>}/>
-        <Route path="/profile" element={<Profile/>}/>
       </Routes>
     </BrowserRouter>
   );
