@@ -1,35 +1,41 @@
 import './rooms.scss';
 import Navbar from "../../components/navbar/Navbar";
 import useFetch from "../../hooks/useFetch";
-import { useParams } from "react-router-dom";
-import { useEffect, useState } from 'react';
-import RoomSeparate from '../room-separate/room-separate'; // Import the RoomSeparate component
+import { useParams, useNavigate } from "react-router-dom";
+import { useContext, useState, useEffect } from 'react'; 
+import RoomSeparate from '../room-separate/room-separate';
 import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import Button from '@mui/material/Button';
+import { AuthContext } from "../../context/AuthContext";
 
 export const Rooms = () => {
-    let { id_hotel } = useParams();
-    const [selectedRoom, setSelectedRoom] = useState(null);
-    const { data, loading, error } = useFetch(`/rooms/byHotel/${id_hotel}`);
+  let { id_hotel } = useParams();
+  const navigate = useNavigate();
+  const { user } = useContext(AuthContext);  
+  const [selectedRoom, setSelectedRoom] = useState(null);
+  const { data, loading, error } = useFetch(`/rooms/byHotel/${id_hotel}`);
 
-    // Use a single state variable to control the modal visibility
-    const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
-    const handleReserveClick = (room) => {
-        setSelectedRoom(room); // Set the selected room data on button click
-        setOpen(true); // Open the modal when a room is selected
-    };
+  const handleReserveClick = (room) => {
+    if (!user) { 
+      navigate("/login"); 
+      return; 
+    }
+    setSelectedRoom(room);  
+    setOpen(true);
+  };
 
-    const handleModalClose = () => {
-        setSelectedRoom(null); // Clear selected room data on modal close
-        setOpen(false); // Close the modal
-    };
+  const handleModalClose = () => {
+    setSelectedRoom(null); 
+    setOpen(false);  
+  };
 
-    useEffect(() => {
-        // ... (Aquí puedes hacer algo cuando 'data' cambie si es necesario)
-    }, [data]);
+  useEffect(() => {
+    
+  }, [data]);
 
     return (
         <div className="rooms-container">
@@ -75,28 +81,18 @@ export const Rooms = () => {
                         </div>
 
                     ) : (
-                        <div>
-                        </div>
+                        <div>Loading...</div>
                     )}
                 </div>
             )}
             {selectedRoom && (
                 <Dialog fullScreen={true} open={open} onClose={handleModalClose}>
-                    <DialogContent className="dialog-content">
-                        <div>
+                    <DialogTitle>DETALLES DE LA HABITACIÓN</DialogTitle>
+                    <DialogContent>
                         <RoomSeparate roomData={selectedRoom} onClose={handleModalClose} />
-                        </div>
                     </DialogContent>
                     <DialogActions>
-                        <Button
-                        variant="contained"
-                        color="error"
-                        size="small"
-                        onClick={handleModalClose}
-                        className="cancel-button"
-                        >
-                            SALIR
-                        </Button>
+                        <Button onClick={handleModalClose}>Salir</Button>
                     </DialogActions>
                 </Dialog>
             )}
