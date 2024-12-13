@@ -79,14 +79,23 @@ export const Rooms = () => {
             )}
             {selectedRoom && (
                 <Dialog fullScreen={true} open={open} onClose={handleModalClose}>
-                    <DialogTitle>DETALLES DE LA HABITACIÓN</DialogTitle>
-                    <DialogContent>
-                        <RoomSeparate roomData={selectedRoom} onClose={handleModalClose} />
-                    </DialogContent>
-                    <DialogActions>
-                        <Button onClick={handleModalClose}>Salir</Button>
-                    </DialogActions>
-                </Dialog>
+                <DialogContent className="dialog-content">
+                    <div>
+                    <RoomSeparate roomData={selectedRoom} onClose={handleModalClose} />
+                    </div>
+                </DialogContent>
+                <DialogActions>
+                    <Button
+                    variant="contained"
+                    color="error"
+                    size="small"
+                    onClick={handleModalClose}
+                    className="cancel-button"
+                    >
+                        SALIR
+                    </Button>
+                </DialogActions>
+            </Dialog>
             )}
         </div>
     );
