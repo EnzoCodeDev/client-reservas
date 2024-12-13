@@ -41,13 +41,13 @@ const Register = () => {
   const validateForm = () => {
     let newErrors = {};
 
-    if (!formData.username) newErrors.username = "Por favor introduzca un usuario.";
+    if (!formData.username) newErrors.username = "Por favor, introduzca un usuario.";
     if (!formData.password || formData.password.length < 8)
       newErrors.password = "La contraseña debe tener mínimo 8 caracteres.";
     if (!formData.email || !/\S+@\S+\.\S+/.test(formData.email))
-      newErrors.email = "Por favor introduzca un correo válido.";
-    if (!formData.country) newErrors.country = "Por favor seleccione un país.";
-    if (!formData.city) newErrors.city = "Por favor introduzca una ciudad.";
+      newErrors.email = "Por favor, introduzca un correo válido.";
+    if (!formData.country) newErrors.country = "Por favor, seleccione un país.";
+    if (!formData.city) newErrors.city = "Por favor, introduzca una ciudad.";
     if (!formData.phone || !isValidPhoneNumber(formData.phone))
       newErrors.phone = "Número de celular inválido o incompleto.";
 
