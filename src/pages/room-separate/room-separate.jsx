@@ -3,6 +3,7 @@ import { Box, TextField, Typography, Button } from '@mui/material';
 import './room-separate.scss';
 import { urlApi } from "../../config/config";
 import axios from 'axios'; // for making API requests
+import swal from "sweetalert";
 
 const SuccessModal = ({ isOpen, onClose }) => {
   return (
@@ -16,44 +17,61 @@ const SuccessModal = ({ isOpen, onClose }) => {
   );
 };
 
-const handleReserveRoom = async (dates, room_id) => {
-  try {
-    const response = await axios.put(`${urlApi}/rooms/availability/${room_id}`, { dates });
-    console.log("Reservation successful:", response.data);
-    
-    setIsSuccessModalOpen(true);
-  } catch (error) {
-    console.error("Reservation error:", error);
-    // Handle reservation error (e.g., show error message)
-  }
-};
 
 const RoomSeparate = ({ roomData, onClose }) => {
   // Datos simulados de la habitación (puedes reemplazarlos con datos reales más adelante)
   // const roomData = {
-  //   title: 'Habitación Deluxe',
-  //   price: 100, // Precio por noche
-  //   maxPeople: 3,
-  //   desc: 'Habitación espaciosa y bien equipada con vista al mar.',
-  //   roomNumbers: [{ number: 101, unavailableDates: ['2024-12-20', '2024-12-25'] }],
-  // };
-  
-  const [startDate, setStartDate] = useState('');
-  const [endDate, setEndDate] = useState('');
-  const [totalPrice, setTotalPrice] = useState(0);
+    //   title: 'Habitación Deluxe',
+    //   price: 100, // Precio por noche
+    //   maxPeople: 3,
+    //   desc: 'Habitación espaciosa y bien equipada con vista al mar.',
+    //   roomNumbers: [{ number: 101, unavailableDates: ['2024-12-20', '2024-12-25'] }],
+    // };
+    
+    const [startDate, setStartDate] = useState('');
+    const [endDate, setEndDate] = useState('');
+    const [totalPrice, setTotalPrice] = useState(0);
+    
+    const handleReserveRoom = async (dates, room_id) => {
+      try {
+        const response = await axios.put(`${urlApi}/rooms/availability/${room_id}`, { dates });
+        console.log("Reservation successful:", response.data);
+        
+        onClose();
+        swal({
+          title: "¡Reservas guardada correctamente!",
+          text: "La reserva se ha hecho correctamente",
+          icon: "success",
+          button: "Aceptar",
+        })
+      } catch (error) {
+        console.error("Reservation error:", error);
+        // Handle reservation error (e.g., show error message)
+      }
+    };
 
-  const calculatePrice = () => {
-    if (startDate && endDate) {
-      const start = new Date(startDate);
+    const calculatePrice = () => {
+      if (startDate && endDate) {
+        const start = new Date(startDate);
       const end = new Date(endDate);
       const days = Math.ceil((end - start) / (1000 * 60 * 60 * 24)); // Calcula la diferencia en días
       if (days > 0) {
         setTotalPrice(days * roomData.price);
       } else {
-        alert('La fecha de salida debe ser posterior a la fecha de entrada.');
+        swal({
+          title: "Error",
+          text: 'La fecha de salida debe ser posterior a la fecha de entrada.',
+          icon: "error",
+          button: "Intentar de nuevo",
+        });
       }
     } else {
-      alert('Por favor selecciona ambas fechas.');
+      swal({
+        title: "Error",
+        text: 'Por favor selecciona ambas fechas.',
+        icon: "error",
+        button: "Intentar de nuevo",
+      });
     }
   };
 
