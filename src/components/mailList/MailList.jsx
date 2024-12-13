@@ -28,17 +28,34 @@ const MailList = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const { name, email, phone } = formData;
+    
+    // Formato del mensaje
+    const message = `
+      Nombre: ${name}
+      Correo: ${email}
+      Teléfono: ${phone}
+    `;
+
+    // Crear un enlace mailto para enviar el correo
+    const mailtoLink = `mailto:miguelangelr109ur@gmail.com?subject=Formulario de contacto&body=${encodeURIComponent(message)}`;
+    
+    // Redirigir al enlace mailto
+    window.location.href = mailtoLink;
+
+    // Mostrar el mensaje de éxito con SweetAlert
     Swal.fire({
       title: '¡Formulario Enviado!',
-      text: 'Nos pondremos en contacto contigo pronto.',
-      icon: 'image', 
-      imageUrl: 'https://media.tenor.com/pZospgLY3vQAAAAi/love.gif',
-      imageWidth: 100, 
-      imageHeight: 100,
+      text: 'Se abrirá tu cliente de correo para enviar el mensaje.',
+      icon: 'info',
       confirmButtonText: 'Aceptar',
       confirmButtonColor: '#0071c2',
       background: '#f4f4f4',
     });
+
+    // Limpiar los campos
+    setFormData({ name: "", email: "", phone: "" });
   };
 
   return (
@@ -89,3 +106,4 @@ const MailList = () => {
 };
 
 export default MailList;
+
