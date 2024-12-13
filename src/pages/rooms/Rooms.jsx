@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from 'react';
 import RoomSeparate from '../room-separate/room-separate'; // Import the RoomSeparate component
 import Dialog from '@mui/material/Dialog';
-import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import Button from '@mui/material/Button';
@@ -83,12 +82,21 @@ export const Rooms = () => {
             )}
             {selectedRoom && (
                 <Dialog fullScreen={true} open={open} onClose={handleModalClose}>
-                    <DialogTitle>DETALLES DE LA HABITACIÓN</DialogTitle>
-                    <DialogContent>
+                    <DialogContent className="dialog-content">
+                        <div>
                         <RoomSeparate roomData={selectedRoom} onClose={handleModalClose} />
+                        </div>
                     </DialogContent>
                     <DialogActions>
-                        <Button onClick={handleModalClose}>Salir</Button>
+                        <Button
+                        variant="contained"
+                        color="error"
+                        size="small"
+                        onClick={handleModalClose}
+                        className="cancel-button"
+                        >
+                            SALIR
+                        </Button>
                     </DialogActions>
                 </Dialog>
             )}
