@@ -43,37 +43,34 @@ const RoomSeparate = ({ roomData, onClose }) => {
           text: "La reserva se ha hecho correctamente",
           icon: "success",
           button: "Aceptar",
-        })
+        });
       } catch (error) {
         console.error("Reservation error:", error);
         // Handle reservation error (e.g., show error message)
       }
     };
 
-    const calculatePrice = () => {
-      if (startDate && endDate) {
-        const start = new Date(startDate);
-      const end = new Date(endDate);
-      const days = Math.ceil((end - start) / (1000 * 60 * 60 * 24)); // Calcula la diferencia en días
-      if (days > 0) {
-        setTotalPrice(days * roomData.price);
-      } else {
-        swal({
-          title: "Error",
-          text: 'La fecha de salida debe ser posterior a la fecha de entrada.',
-          icon: "error",
-          button: "Intentar de nuevo",
-        });
-      }
+  const calculatePrice = () => {
+    if (!startDate || !endDate) {
+      alert('Por favor selecciona ambas fechas.');
+      return;
+    }
+  
+    const start = new Date(startDate);
+    const end = new Date(endDate);
+    if (isNaN(start.getTime()) || isNaN(end.getTime())) {
+      alert('Fechas inválidas. Por favor selecciona fechas válidas.');
+      return;
+    }
+  
+    const days = Math.ceil((end - start) / (1000 * 60 * 60 * 24));
+    if (days > 0) {
+      setTotalPrice(days * roomData.price);
     } else {
-      swal({
-        title: "Error",
-        text: 'Por favor selecciona ambas fechas.',
-        icon: "error",
-        button: "Intentar de nuevo",
-      });
+      alert('La fecha de salida debe ser posterior a la fecha de entrada.');
     }
   };
+  
 
   return (
     <Box className="room-separate">

@@ -1,6 +1,7 @@
 import { useState } from "react";
-import PhoneInput from 'react-phone-number-input'
-import 'react-phone-number-input/style.css'
+import PhoneInput from 'react-phone-number-input';
+import 'react-phone-number-input/style.css';
+import Swal from 'sweetalert2';  
 import "./mailList.css";
 
 const MailList = () => {
@@ -27,7 +28,17 @@ const MailList = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Formulario enviado con éxito");
+    Swal.fire({
+      title: '¡Formulario Enviado!',
+      text: 'Nos pondremos en contacto contigo pronto.',
+      icon: 'image', 
+      imageUrl: 'https://media.tenor.com/pZospgLY3vQAAAAi/love.gif',
+      imageWidth: 100, 
+      imageHeight: 100,
+      confirmButtonText: 'Aceptar',
+      confirmButtonColor: '#0071c2',
+      background: '#f4f4f4',
+    });
   };
 
   return (
