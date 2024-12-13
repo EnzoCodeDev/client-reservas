@@ -1,0 +1,42 @@
+.profileContainer {
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 24px;
+  }
+  
+  .reservations {
+    margin-top: 20px;
+  }
+  
+  .newReservation {
+    margin-top: 40px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  form div {
+    margin-bottom: 10px;
+  }
+  
+  form input {
+    padding: 8px;
+    margin-top: 5px;
+  }
+  
+  button {
+    padding: 10px;
+    background-color: #003580;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #2d18cf;
+  }
+  

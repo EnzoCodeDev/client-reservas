@@ -34,7 +34,6 @@
   margin-right: 10px; 
 }
 
-
 .navButtonI {
   font-family: 'Poppins', sans-serif;
   border: none;
@@ -92,6 +91,41 @@
   border-radius: 5px;
 }
 
+.userMenu {
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background-color: white;
+  color: #333;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.dropdownItem {
+  width: 100%;
+  padding: 10px 15px;
+  text-align: left;
+  background: none;
+  border: none;
+  color: #003580;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dropdownItem:hover {
+  background-color: #2d18cf;
+  color: #fff;
+}
+
 @media (max-width: 768px) {
   .navbar {
     height: 60px;
@@ -105,4 +139,3 @@
     padding: 6px 12px;
   }
 }
-
